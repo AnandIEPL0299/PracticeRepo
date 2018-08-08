@@ -1,0 +1,132 @@
+ProjectManagement Life Cycle 4 phases:
+Initiation
+Planning
+Execution
+exposure
+
+
+jfrog Artifactory:
+nexus 
+ 
+https://www.toptal.com/git/interview-questions
+git bisect to fid bug in source code --> git bisect start 
+git rebase --> git rebase -i HEAD~5 (to squash 5 commits to one)
+git pull
+git merge
+git fetch
+git reset -->git reset -soft HEAD~5 && git commit(to squash 5 commits to one)
+git branch –merged It lists the branches that have been merged into the current branch.
+git branch –no-merged It lists the branches that have not been merged
+branching strategy in git(hotfix,feature,release,development)
+
+
+Linux cmds:
+curl
+$@ treats each quoted arguments as separate arguments but $* will consider the entire set of positional parameters as a single string.
+ls -lart filename --shows the owner & group info
+chmod --modifies the file permissions 7(rwx)5(rx)4(r)
+exim --Linux admins should have knowledge of exim command to check and manage mails on the server 
+Exim -- is used for locating the spam activity on the servers
+mkdir -p htg(main dir)/{articles,images,note,done}(subdirs)
+find . -name "*.bak" -delete ==> it will deletes all files ends with .bak from current dir to its sub dirs.
+sed 's/ramesh/ramcharan/' names > newnames 
+cat /etc/os-release --to know os info
+free -m --to check memory(RAM)
+df -h --to check disk space
+netstat -ntpl --to know running services and port of those services
+find -name /outputfile/sample "*.txt"
+metachracters : *(to match 0 or n no.of chars) and ? 
+owner group Others
+rwx   rwx   rwx 
+421
+cd ~ --> switch to users home directory from anywhere
+cd / --> / (top of tree structure)
+cd.. --> switch to parent directory
+uname --> It gives information about unix system which you are using. 
+tty --> It displays the device name of your terminal.
+gzip --> zips given file ex: gzip filename
+compress--> compresses the given file ex: compress filename
+locate -->
+which --> find files by name ex: which perl
+whereis --> Locates the binary, source, and manual page files for a command ex: whereis java
+sort -- To arrage in alphabetical order
+ps -f -- gives PID and PPID
+top -- gives tasks,memory,swap,up tim since login
+ping(pocket Internet Groper) 
+pem (private Enhanced Mail)
+/etc/resolv.conf --> to put name server 8.8.8.8
+finger --> displays user info on given host (either local or remote) ex: finger anand
+expr --> evaluate given input
+awk --> its a programming lang. and used to manipulate text data ,it produces formatted reports
+wc filename --> gives totallines(1) totalwords(2)  totalsize in bytes(3) filename(4) 
+ip,mask,dns,gateway (mandatory for netwrok script file)
+fdisk --> disk partions with drives
+traceroute --> is linux command used to check route info and no of hops b/w hosts
+tracert --> is windows command used to check route info and no of hops b/w hosts
+A symbolic link is a file that points to another file. A desktop shortcut is basically a symbolic link
+Symbolic link file==> ln -s /home/username/documents/accounts/useraccounts.doc /home/username/useraccounts.doc
+shutdown 
+reboot poweroff first and restrt later
+restart
+exit 0
+init 0
+poweroff 
+comm --> to print data common to both files ex: comm -12 file1 file2 
+tail -f filename -> shows last 10 lines of a file(used to check status of logs in a continuosly updating log file)
+uptime -p -s: to see when the system started and running since
+shell script:
+variable types:Local,env,shell
+the $ character represents the process ID number, or PID, of the current shell ex:$echo $$
+exit status $?
+$0 The filename of the current script.
+
+$# The number of arguments supplied to a script.
+
+$$ the process ID number, or PID, of the current shell
+$? The exit status of the last command executed.
+$n These variables correspond to the arguments with which a script was invoked.
+ Here n is a positive decimal number corresponding to the position of an argument
+$@
+$* All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2
+
+file max  permissions 666-umask 022==644(defult file permissions )
+directory max  permissions 777-umask 022==755(defult file permissions )
+
+
+
+chef stuff:
+chef setup:
+in chef-server:
+download chef-server and put workstation and node entries in cat /etc/hosts file in chef server
+chef-server-ctl reconfigure
+chef-server-ctl status
+in workstation:
+install chef by rpm -ivh chef...version.rpm
+after installation check rpmquery chef
+get certificates(admin.pem,chef-validator.pem,chef-webui.pem) from chef-server and create new .chef folder copy them from home to .chef 
+configure knife to communicate with chef-server --> knife configure -i
+while configuring if you get error go  for--> knife ssl fetch
+check certificate connection --> knife ssl check
+knife client list
+knife user list
+
+verify by ping workstation and ping node
+
+chef work flow
+creating cookbooks/recipes (chef generate cookbook path/cbname)
+writing or editing cbs
+test cbs (cookstyle path/cbname)
+upload (knife cookbook upload cbname),to check nodes list on chhef server (knife node runlist)
+attach run list to node (knife node runlist add nodename cbname)
+run chef client (sudo run chef-client)
+to know chef version --> head -n1 /opt/opscode/version-manifest.txt
+
+chef attributes (we will get chef node info,node state information)
+SystemDefined:OAHI is chef system profiler which give a coll.of node info to chef as a set of automatic attribues
+Manual:we difine them
+chef templates: its a predifined structure using which we can create static html files
+chef roles & environments
+chef databags : it is a global variable that is always available in chef server.It stores the data in JSON format
+
+Docker stuff:
+
