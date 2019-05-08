@@ -1,2 +1,4 @@
 This is file1
 This is reset demo 
+This is for git stash demo 
+This is for git tags
